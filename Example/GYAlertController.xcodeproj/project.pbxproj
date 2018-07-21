@@ -40,7 +40,7 @@
 
 /* Begin PBXFileReference section */
 		36708032983E8F5D2099FACB /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		4CEBBB7632686241231ECF3B /* GYAlertController.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GYAlertController.podspec; path = ../GYAlertController.podspec; sourceTree = "<group>"; };
+		4CEBBB7632686241231ECF3B /* GYAlertController.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GYAlertController.podspec; path = ../GYAlertController.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		511BA04DEC07C16B9112AFEC /* Pods_GYAlertController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GYAlertController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		579215E67881C808DAC62F4D /* Pods_GYAlertController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GYAlertController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* GYAlertController_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GYAlertController_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
