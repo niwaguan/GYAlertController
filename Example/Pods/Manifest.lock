@@ -1,0 +1,16 @@
+PODS:
+  - GYAlertController (0.1.0)
+
+DEPENDENCIES:
+  - GYAlertController (from `../`)
+
+EXTERNAL SOURCES:
+  GYAlertController:
+    :path: ../
+
+SPEC CHECKSUMS:
+  GYAlertController: b57735b1515743806d5f7600a696470a11b06e4d
+
+PODFILE CHECKSUM: 83a077283ac320342b4987f55bad8de3865da20f
+
+COCOAPODS: 1.4.0

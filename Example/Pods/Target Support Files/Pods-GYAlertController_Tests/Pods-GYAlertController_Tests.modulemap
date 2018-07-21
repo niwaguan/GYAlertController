@@ -1,0 +1,6 @@
+framework module Pods_GYAlertController_Tests {
+  umbrella header "Pods-GYAlertController_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module GYAlertController {
+  umbrella header "GYAlertController-umbrella.h"
+
+  export *
+  module * { export * }
+}
