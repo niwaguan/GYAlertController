@@ -1,5 +1,5 @@
 use_frameworks!
-
+platform :ios, '8.0'
 target 'GYAlertController_Example' do
   pod 'GYAlertController', :path => '../'
 

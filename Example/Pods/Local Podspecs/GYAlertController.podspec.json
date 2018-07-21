@@ -1,18 +1,18 @@
 {
   "name": "GYAlertController",
   "version": "0.1.0",
-  "summary": "A short description of GYAlertController.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Gyang/GYAlertController",
+  "summary": "A custom UI Component like UIAlertController. But it provides great flexibility and dynamism.",
+  "description": "A custom UI Component like UIAlertController. But it provides great flexibility and dynamism. You have more choices to make difference, such as title style, message style, alert title style and so on.",
+  "homepage": "https://github.com/Goyaya/GYAlertController",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "Gyang": "goyaya@yeah.net"
+    "Goyaya": "goyaya@yeah.net"
   },
   "source": {
-    "git": "https://github.com/Gyang/GYAlertController.git",
+    "git": "https://github.com/Goyaya/GYAlertController.git",
     "tag": "0.1.0"
   },
   "platforms": {

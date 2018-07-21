@@ -8,15 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		02013A6A04FFB124F786B03FBC1B49B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		05ECFDCD807A1BD9F465B785EEB2B7C3 /* GYAlertController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A6691F2EF48FE73DA97016E2288105 /* GYAlertController-dummy.m */; };
+		0F4E53A2B7B98CB0EBE8D6E5A47B5784 /* GYAlertAction.h in Headers */ = {isa = PBXBuildFile; fileRef = BE0B1AD4DDED27E6CF2F45F0D8D8BE5D /* GYAlertAction.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2337D9475FBE3D17CD025BA7F5314D52 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		290D12FEF49B9AB20E7ED7E0CDB72CAB /* Pods-GYAlertController_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CCB93675BA98A01E577D13AE894F62FA /* Pods-GYAlertController_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2F661281499BEC5FDD6FE61B3E4ECD3A /* GYAlertController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 267BD1590B218C69B3A7D53A5E23D2CC /* GYAlertController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3B5DE21F46A8B34B97C2B26661175936 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5E3E29DBF4EEB86D50819034692314 /* ReplaceMe.m */; };
-		5437B830A4C1C727AC169EDEFD0E7607 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		43AA93375293F0FBAFD9CA9B4FC87D99 /* GYAlertControllerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B7984D511005E2B3404A1DE1F8BBB84 /* GYAlertControllerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		469645879428FEF40AE029E9DBFFDE7C /* GYAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C82A8E0DC7E4613C9D5061E15281B4 /* GYAlertAction.m */; };
+		49DEA0AD60F430C42E431C63A62D87C2 /* GYAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8488FBF4DCF4DD3F7752770CC9FA6F5D /* GYAnimationController.m */; };
 		58365AEE4604268B2C888387D35ED4C2 /* Pods-GYAlertController_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 69267C1BFF29FCA46E12BFED2A7CDD84 /* Pods-GYAlertController_Example-dummy.m */; };
-		712C467FD086D423793757A15616AEA7 /* GYAlertController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AD90CFE7A68F7A0F90224CA262E927DD /* GYAlertController-dummy.m */; };
+		6899FF2F3FD25765CA9D6FE573AE5155 /* GYAnimationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC37A56D8E44C6FC1691A30F68F7CC3 /* GYAnimationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D3F0948D0E4833D1E6C1E67763C63F8 /* GYPresentationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7949EEAB2F2124E957BFF4EB6618E624 /* GYPresentationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A0CAEBFD286D3A0CB5976C40BFB1BBDD /* GYAlertControllerView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1F812DB56EA9688990E6AAABDBE44C /* GYAlertControllerView.m */; };
 		AA79F90F508AD0AB2633FC8C3B3F0AF8 /* Pods-GYAlertController_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 181E7AE7387DB0AEB2768EA7DB904560 /* Pods-GYAlertController_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AC111A0655BBA1D49691261CF3733451 /* GYPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 263467A92E765BD5194DDF91BCB09BD5 /* GYPresentationController.m */; };
+		D6F6236E3C710BE5C33507C6BF56AF95 /* GYAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF8EAFBE1330E0BBB0685DBA8132EFB /* GYAlertController.m */; };
+		E08A91F9B26FE6F5C843CE6D602021FA /* GYAlertController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B6C7A3D0F19F2490FD2B6ECD5CAECE19 /* GYAlertController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EACBED7B7117B83E0015BC45DABCECDA /* Pods-GYAlertController_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AF47EE82F548FDC06446C66066FD6574 /* Pods-GYAlertController_Tests-dummy.m */; };
+		ECC9B1DC83DBA87B821036FBD8EB3F59 /* GYAlertController.h in Headers */ = {isa = PBXBuildFile; fileRef = 468873D5AA6E03CC073A484DC65CDC76 /* GYAlertController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F012B8A1B363AF663207DB291D556557 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,63 +33,72 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DB4D437B59E51E84F2E9F8D17B6E3027;
+			remoteGlobalIDString = 1EE393EC8591BE5E98276241F01A6ADE;
 			remoteInfo = GYAlertController;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		080E9EE79C6F74B8CACF744D96B59D8E /* GYAlertController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GYAlertController-prefix.pch"; sourceTree = "<group>"; };
-		0CBB418B4D73000BBAF298DD8C31DB90 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D338825FC9F3A889A8AAA3CAC76EB2E /* Pods-GYAlertController_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GYAlertController_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		147874E5BAD821E8E148E4832C29A5A8 /* GYAlertController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GYAlertController.xcconfig; sourceTree = "<group>"; };
 		181E7AE7387DB0AEB2768EA7DB904560 /* Pods-GYAlertController_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GYAlertController_Tests-umbrella.h"; sourceTree = "<group>"; };
-		1AF6A34E4B470B00234AF2A870F2DA49 /* Pods_GYAlertController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GYAlertController_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AF6A34E4B470B00234AF2A870F2DA49 /* Pods_GYAlertController_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GYAlertController_Tests.framework; path = "Pods-GYAlertController_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BC37A56D8E44C6FC1691A30F68F7CC3 /* GYAnimationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GYAnimationController.h; path = GYAlertController/Classes/GYAnimationController.h; sourceTree = "<group>"; };
 		1D153E495E3445EAEF58CA0F34F20414 /* Pods-GYAlertController_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GYAlertController_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		1FE6B588ABA2E4112BD1878F843DBDCE /* Pods-GYAlertController_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GYAlertController_Tests.modulemap"; sourceTree = "<group>"; };
-		267BD1590B218C69B3A7D53A5E23D2CC /* GYAlertController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GYAlertController-umbrella.h"; sourceTree = "<group>"; };
+		263467A92E765BD5194DDF91BCB09BD5 /* GYPresentationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GYPresentationController.m; path = GYAlertController/Classes/GYPresentationController.m; sourceTree = "<group>"; };
 		2BF2136A40BC4A433F46A72B02C0C136 /* Pods-GYAlertController_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GYAlertController_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		2C7983FAADE65A7AF88E2D0CD88DD7B0 /* GYAlertController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = GYAlertController.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		468873D5AA6E03CC073A484DC65CDC76 /* GYAlertController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GYAlertController.h; path = GYAlertController/Classes/GYAlertController.h; sourceTree = "<group>"; };
+		525F579F92675F7CF1D0C06FEFBB629C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5856612F422B2E28E81B177C9135F1F2 /* GYAlertController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GYAlertController.xcconfig; sourceTree = "<group>"; };
+		59A6691F2EF48FE73DA97016E2288105 /* GYAlertController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GYAlertController-dummy.m"; sourceTree = "<group>"; };
 		6383B41AB9845FE48BC1717A41A3281F /* Pods-GYAlertController_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GYAlertController_Tests-resources.sh"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		69267C1BFF29FCA46E12BFED2A7CDD84 /* Pods-GYAlertController_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GYAlertController_Example-dummy.m"; sourceTree = "<group>"; };
+		6A21358319509B693264D39230C75FD9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		790140C128D21AFFFB40DE0805471BFE /* Pods-GYAlertController_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GYAlertController_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		7949EEAB2F2124E957BFF4EB6618E624 /* GYPresentationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GYPresentationController.h; path = GYAlertController/Classes/GYPresentationController.h; sourceTree = "<group>"; };
 		79CC97CDCFF570958833BAF7AB4B10E6 /* Pods-GYAlertController_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GYAlertController_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7D310ED74202E3D4A4FDDCDC77A568AF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8285C9D5576ED587BC464AECE81456AC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		8488FBF4DCF4DD3F7752770CC9FA6F5D /* GYAnimationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GYAnimationController.m; path = GYAlertController/Classes/GYAnimationController.m; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9AA30461C85613505CA556BC72A56267 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9E26293167721F28AC17A2F46B7DAC3A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		9B7984D511005E2B3404A1DE1F8BBB84 /* GYAlertControllerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GYAlertControllerView.h; path = GYAlertController/Classes/GYAlertControllerView.h; sourceTree = "<group>"; };
 		A0B0A009ABEBE28DCD86038881410C7A /* Pods-GYAlertController_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GYAlertController_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A2EDCBE80FE03877EE254BD251EFA8CB /* Pods-GYAlertController_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GYAlertController_Example-frameworks.sh"; sourceTree = "<group>"; };
-		A33077D68A24877767DC6FF6B6B97741 /* GYAlertController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = GYAlertController.podspec; sourceTree = "<group>"; };
 		A88543AB3A036472D437BBCDF2AA2D34 /* Pods-GYAlertController_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GYAlertController_Example-resources.sh"; sourceTree = "<group>"; };
-		A90820863686E1EE32C6CABB2BA32DE8 /* Pods_GYAlertController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GYAlertController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD5E3E29DBF4EEB86D50819034692314 /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ReplaceMe.m; path = GYAlertController/Classes/ReplaceMe.m; sourceTree = "<group>"; };
-		AD90CFE7A68F7A0F90224CA262E927DD /* GYAlertController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GYAlertController-dummy.m"; sourceTree = "<group>"; };
+		A90820863686E1EE32C6CABB2BA32DE8 /* Pods_GYAlertController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GYAlertController_Example.framework; path = "Pods-GYAlertController_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADF8EAFBE1330E0BBB0685DBA8132EFB /* GYAlertController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GYAlertController.m; path = GYAlertController/Classes/GYAlertController.m; sourceTree = "<group>"; };
 		AF47EE82F548FDC06446C66066FD6574 /* Pods-GYAlertController_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GYAlertController_Tests-dummy.m"; sourceTree = "<group>"; };
+		B6C7A3D0F19F2490FD2B6ECD5CAECE19 /* GYAlertController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GYAlertController-umbrella.h"; sourceTree = "<group>"; };
 		BB090BB4F3BC81601ABEAE8B8A86EDBD /* Pods-GYAlertController_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GYAlertController_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		BE0B1AD4DDED27E6CF2F45F0D8D8BE5D /* GYAlertAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GYAlertAction.h; path = GYAlertController/Classes/GYAlertAction.h; sourceTree = "<group>"; };
 		C245D8CBB440838473CE1438048AB744 /* Pods-GYAlertController_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GYAlertController_Example.release.xcconfig"; sourceTree = "<group>"; };
 		CCB93675BA98A01E577D13AE894F62FA /* Pods-GYAlertController_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GYAlertController_Example-umbrella.h"; sourceTree = "<group>"; };
 		D05285CF4014A9F2CBA272182DB231D5 /* Pods-GYAlertController_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GYAlertController_Example.modulemap"; sourceTree = "<group>"; };
-		D98A0F2706D1324132480CB1430B86E6 /* GYAlertController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GYAlertController.modulemap; sourceTree = "<group>"; };
-		E5EDFBCF5C878F5145007A6D08785426 /* GYAlertController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GYAlertController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0C82A8E0DC7E4613C9D5061E15281B4 /* GYAlertAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GYAlertAction.m; path = GYAlertController/Classes/GYAlertAction.m; sourceTree = "<group>"; };
+		DDB6E3E8B17FAE4E08CDFBDEA73100DB /* GYAlertController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GYAlertController.modulemap; sourceTree = "<group>"; };
+		E5C18C34A7AAD57EDA87C3D6A6DAB615 /* GYAlertController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GYAlertController-prefix.pch"; sourceTree = "<group>"; };
+		E5EDFBCF5C878F5145007A6D08785426 /* GYAlertController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GYAlertController.framework; path = GYAlertController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6683B0DEB3B2D671D1D18B00FACF6B5 /* Pods-GYAlertController_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GYAlertController_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		F8301DAB04407ACF0D0263C3EAB1B1C8 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		ED1F812DB56EA9688990E6AAABDBE44C /* GYAlertControllerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GYAlertControllerView.m; path = GYAlertController/Classes/GYAlertControllerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		640BF9C7472C417AB5AFB6F622C77160 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5437B830A4C1C727AC169EDEFD0E7607 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		843655A37AC7C8EA7BDA55D618966120 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				02013A6A04FFB124F786B03FBC1B49B2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880498EFD014FFD351C0764E1246BC93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F012B8A1B363AF663207DB291D556557 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +113,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14D987B7CBC1B8A083D6E2E76EC62380 /* GYAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				BE0B1AD4DDED27E6CF2F45F0D8D8BE5D /* GYAlertAction.h */,
+				D0C82A8E0DC7E4613C9D5061E15281B4 /* GYAlertAction.m */,
+				468873D5AA6E03CC073A484DC65CDC76 /* GYAlertController.h */,
+				ADF8EAFBE1330E0BBB0685DBA8132EFB /* GYAlertController.m */,
+				9B7984D511005E2B3404A1DE1F8BBB84 /* GYAlertControllerView.h */,
+				ED1F812DB56EA9688990E6AAABDBE44C /* GYAlertControllerView.m */,
+				1BC37A56D8E44C6FC1691A30F68F7CC3 /* GYAnimationController.h */,
+				8488FBF4DCF4DD3F7752770CC9FA6F5D /* GYAnimationController.m */,
+				7949EEAB2F2124E957BFF4EB6618E624 /* GYPresentationController.h */,
+				263467A92E765BD5194DDF91BCB09BD5 /* GYPresentationController.m */,
+				DBCBA0647F761976E5B576DC845FB891 /* Pod */,
+				9E3D8A99716683EF9CB22AB325D7B57F /* Support Files */,
+			);
+			name = GYAlertController;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		30145A12DFF729C074224678FD0E99F6 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,25 +142,11 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		705820FDCCC0FF168421D7E6D55E247B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				D98A0F2706D1324132480CB1430B86E6 /* GYAlertController.modulemap */,
-				147874E5BAD821E8E148E4832C29A5A8 /* GYAlertController.xcconfig */,
-				AD90CFE7A68F7A0F90224CA262E927DD /* GYAlertController-dummy.m */,
-				080E9EE79C6F74B8CACF744D96B59D8E /* GYAlertController-prefix.pch */,
-				267BD1590B218C69B3A7D53A5E23D2CC /* GYAlertController-umbrella.h */,
-				0CBB418B4D73000BBAF298DD8C31DB90 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/GYAlertController";
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				A4250697E3B76AF74A73FFD623177C49 /* Development Pods */,
+				952C5290540767CBC219C121B2C868A2 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				8CC6D935E731EF7562CCC4C539F94693 /* Products */,
 				30145A12DFF729C074224678FD0E99F6 /* Targets Support Files */,
@@ -137,6 +161,28 @@
 				1AF6A34E4B470B00234AF2A870F2DA49 /* Pods_GYAlertController_Tests.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		952C5290540767CBC219C121B2C868A2 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				14D987B7CBC1B8A083D6E2E76EC62380 /* GYAlertController */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		9E3D8A99716683EF9CB22AB325D7B57F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DDB6E3E8B17FAE4E08CDFBDEA73100DB /* GYAlertController.modulemap */,
+				5856612F422B2E28E81B177C9135F1F2 /* GYAlertController.xcconfig */,
+				59A6691F2EF48FE73DA97016E2288105 /* GYAlertController-dummy.m */,
+				E5C18C34A7AAD57EDA87C3D6A6DAB615 /* GYAlertController-prefix.pch */,
+				B6C7A3D0F19F2490FD2B6ECD5CAECE19 /* GYAlertController-umbrella.h */,
+				525F579F92675F7CF1D0C06FEFBB629C /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/GYAlertController";
 			sourceTree = "<group>";
 		};
 		9FF3D14974FBD80C3D06E505C1BEA03B /* Pods-GYAlertController_Example */ = {
@@ -155,14 +201,6 @@
 			);
 			name = "Pods-GYAlertController_Example";
 			path = "Target Support Files/Pods-GYAlertController_Example";
-			sourceTree = "<group>";
-		};
-		A4250697E3B76AF74A73FFD623177C49 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C726115D60A0C31824A6CE524876F369 /* GYAlertController */,
-			);
-			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		A85C77BFE46624EC1D7B09658B8214C2 /* Pods-GYAlertController_Tests */ = {
@@ -191,17 +229,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C726115D60A0C31824A6CE524876F369 /* GYAlertController */ = {
-			isa = PBXGroup;
-			children = (
-				AD5E3E29DBF4EEB86D50819034692314 /* ReplaceMe.m */,
-				FF7FECDF8B4BAF1E37508257AA28FE51 /* Pod */,
-				705820FDCCC0FF168421D7E6D55E247B /* Support Files */,
-			);
-			name = GYAlertController;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,12 +237,12 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		FF7FECDF8B4BAF1E37508257AA28FE51 /* Pod */ = {
+		DBCBA0647F761976E5B576DC845FB891 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				A33077D68A24877767DC6FF6B6B97741 /* GYAlertController.podspec */,
-				9E26293167721F28AC17A2F46B7DAC3A /* LICENSE */,
-				F8301DAB04407ACF0D0263C3EAB1B1C8 /* README.md */,
+				2C7983FAADE65A7AF88E2D0CD88DD7B0 /* GYAlertController.podspec */,
+				6A21358319509B693264D39230C75FD9 /* LICENSE */,
+				8285C9D5576ED587BC464AECE81456AC /* README.md */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
@@ -223,14 +250,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		532EAB84670679D89F09D8F29EA8778C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2F661281499BEC5FDD6FE61B3E4ECD3A /* GYAlertController-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		85B03B0F06137B26C30F5A60943E0DE4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -247,9 +266,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E98E7AD2569616F70B15D84CAAC28089 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F4E53A2B7B98CB0EBE8D6E5A47B5784 /* GYAlertAction.h in Headers */,
+				E08A91F9B26FE6F5C843CE6D602021FA /* GYAlertController-umbrella.h in Headers */,
+				ECC9B1DC83DBA87B821036FBD8EB3F59 /* GYAlertController.h in Headers */,
+				43AA93375293F0FBAFD9CA9B4FC87D99 /* GYAlertControllerView.h in Headers */,
+				6899FF2F3FD25765CA9D6FE573AE5155 /* GYAnimationController.h in Headers */,
+				6D3F0948D0E4833D1E6C1E67763C63F8 /* GYPresentationController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		1EE393EC8591BE5E98276241F01A6ADE /* GYAlertController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61E56262059163CBA38688A9F2B677CF /* Build configuration list for PBXNativeTarget "GYAlertController" */;
+			buildPhases = (
+				3585927858CCE758CBD1BED5D0053929 /* Sources */,
+				880498EFD014FFD351C0764E1246BC93 /* Frameworks */,
+				E98E7AD2569616F70B15D84CAAC28089 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GYAlertController;
+			productName = GYAlertController;
+			productReference = E5EDFBCF5C878F5145007A6D08785426 /* GYAlertController.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		236B5513EE08799EE51FFE39BD30EAE7 /* Pods-GYAlertController_Tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F16DEDAD6F7C76FDEF5514974B4C680 /* Build configuration list for PBXNativeTarget "Pods-GYAlertController_Tests" */;
@@ -285,23 +334,6 @@
 			productReference = A90820863686E1EE32C6CABB2BA32DE8 /* Pods_GYAlertController_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		DB4D437B59E51E84F2E9F8D17B6E3027 /* GYAlertController */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 02FAC0ADCBFDAA6AA383CC9E1F5B9180 /* Build configuration list for PBXNativeTarget "GYAlertController" */;
-			buildPhases = (
-				A97F62B4556B9EDB99868F292F100779 /* Sources */,
-				640BF9C7472C417AB5AFB6F622C77160 /* Frameworks */,
-				532EAB84670679D89F09D8F29EA8778C /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = GYAlertController;
-			productName = GYAlertController;
-			productReference = E5EDFBCF5C878F5145007A6D08785426 /* GYAlertController.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -323,7 +355,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DB4D437B59E51E84F2E9F8D17B6E3027 /* GYAlertController */,
+				1EE393EC8591BE5E98276241F01A6ADE /* GYAlertController */,
 				8510F0823021A6E1220F73893F074D05 /* Pods-GYAlertController_Example */,
 				236B5513EE08799EE51FFE39BD30EAE7 /* Pods-GYAlertController_Tests */,
 			);
@@ -339,20 +371,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3585927858CCE758CBD1BED5D0053929 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				469645879428FEF40AE029E9DBFFDE7C /* GYAlertAction.m in Sources */,
+				05ECFDCD807A1BD9F465B785EEB2B7C3 /* GYAlertController-dummy.m in Sources */,
+				D6F6236E3C710BE5C33507C6BF56AF95 /* GYAlertController.m in Sources */,
+				A0CAEBFD286D3A0CB5976C40BFB1BBDD /* GYAlertControllerView.m in Sources */,
+				49DEA0AD60F430C42E431C63A62D87C2 /* GYAnimationController.m in Sources */,
+				AC111A0655BBA1D49691261CF3733451 /* GYPresentationController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9E5679BA34C0A385109890B894A21C5B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				58365AEE4604268B2C888387D35ED4C2 /* Pods-GYAlertController_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A97F62B4556B9EDB99868F292F100779 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				712C467FD086D423793757A15616AEA7 /* GYAlertController-dummy.m in Sources */,
-				3B5DE21F46A8B34B97C2B26661175936 /* ReplaceMe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,45 +398,13 @@
 		B5B30FE6C5AE3645EAE68FB48AEE067A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GYAlertController;
-			target = DB4D437B59E51E84F2E9F8D17B6E3027 /* GYAlertController */;
+			target = 1EE393EC8591BE5E98276241F01A6ADE /* GYAlertController */;
 			targetProxy = C201983C5559478814089869A4FDABF6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1A866424A9BED2C6A14CD22B08827F2E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6683B0DEB3B2D671D1D18B00FACF6B5 /* Pods-GYAlertController_Example.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-GYAlertController_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-GYAlertController_Example/Pods-GYAlertController_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_GYAlertController_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		28D3B177E124BD6191ADAE0A8E082E7F /* Debug */ = {
+		1B7D24F76E95AC7103D3C5D73B762F4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2BF2136A40BC4A433F46A72B02C0C136 /* Pods-GYAlertController_Tests.debug.xcconfig */;
 			buildSettings = {
@@ -415,7 +419,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-GYAlertController_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-GYAlertController_Tests/Pods-GYAlertController_Tests.modulemap";
@@ -432,7 +436,37 @@
 			};
 			name = Debug;
 		};
-		2A2163F158E0A0614FEE31D1D77500EA /* Release */ = {
+		2EF2043DD4C36A3F1C99E2D5FC5B600C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5856612F422B2E28E81B177C9135F1F2 /* GYAlertController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GYAlertController/GYAlertController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GYAlertController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GYAlertController/GYAlertController.modulemap";
+				PRODUCT_NAME = GYAlertController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5A2492DC37145BCEF1E2B282BD4852AC /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 790140C128D21AFFFB40DE0805471BFE /* Pods-GYAlertController_Tests.release.xcconfig */;
 			buildSettings = {
@@ -447,7 +481,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-GYAlertController_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-GYAlertController_Tests/Pods-GYAlertController_Tests.modulemap";
@@ -465,7 +499,101 @@
 			};
 			name = Release;
 		};
-		5011B865762FC0C0A28ECEC4CB63DC68 /* Debug */ = {
+		6EE9DD143A4CA23F941C44AFEB9476A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6683B0DEB3B2D671D1D18B00FACF6B5 /* Pods-GYAlertController_Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GYAlertController_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GYAlertController_Example/Pods-GYAlertController_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_GYAlertController_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9781757C93D5576B891CD72EC488DA4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C245D8CBB440838473CE1438048AB744 /* Pods-GYAlertController_Example.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GYAlertController_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GYAlertController_Example/Pods-GYAlertController_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_GYAlertController_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A98A3FC15C1D151CA21AA5344376E6BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5856612F422B2E28E81B177C9135F1F2 /* GYAlertController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GYAlertController/GYAlertController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GYAlertController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GYAlertController/GYAlertController.modulemap";
+				PRODUCT_NAME = GYAlertController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C3E37FB098AE76440E29106ADBF00CEB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -517,7 +645,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -528,7 +656,7 @@
 			};
 			name = Debug;
 		};
-		827269710C98D60C14D46BC6AF9BF728 /* Release */ = {
+		DA03565BE765DB55C6448FB363A44481 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -577,7 +705,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
@@ -586,115 +714,23 @@
 			};
 			name = Release;
 		};
-		A4C45785AE50EBA36F84BAF7B7957454 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 147874E5BAD821E8E148E4832C29A5A8 /* GYAlertController.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GYAlertController/GYAlertController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GYAlertController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GYAlertController/GYAlertController.modulemap";
-				PRODUCT_NAME = GYAlertController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		ABB90B72ECE83D67E8132B39AC770A07 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C245D8CBB440838473CE1438048AB744 /* Pods-GYAlertController_Example.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-GYAlertController_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-GYAlertController_Example/Pods-GYAlertController_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_GYAlertController_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		F8445817BA8544C65DA508EC9353B258 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 147874E5BAD821E8E148E4832C29A5A8 /* GYAlertController.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/GYAlertController/GYAlertController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GYAlertController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GYAlertController/GYAlertController.modulemap";
-				PRODUCT_NAME = GYAlertController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		02FAC0ADCBFDAA6AA383CC9E1F5B9180 /* Build configuration list for PBXNativeTarget "GYAlertController" */ = {
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F8445817BA8544C65DA508EC9353B258 /* Debug */,
-				A4C45785AE50EBA36F84BAF7B7957454 /* Release */,
+				C3E37FB098AE76440E29106ADBF00CEB /* Debug */,
+				DA03565BE765DB55C6448FB363A44481 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		61E56262059163CBA38688A9F2B677CF /* Build configuration list for PBXNativeTarget "GYAlertController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5011B865762FC0C0A28ECEC4CB63DC68 /* Debug */,
-				827269710C98D60C14D46BC6AF9BF728 /* Release */,
+				A98A3FC15C1D151CA21AA5344376E6BB /* Debug */,
+				2EF2043DD4C36A3F1C99E2D5FC5B600C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -702,8 +738,8 @@
 		9F16DEDAD6F7C76FDEF5514974B4C680 /* Build configuration list for PBXNativeTarget "Pods-GYAlertController_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				28D3B177E124BD6191ADAE0A8E082E7F /* Debug */,
-				2A2163F158E0A0614FEE31D1D77500EA /* Release */,
+				1B7D24F76E95AC7103D3C5D73B762F4E /* Debug */,
+				5A2492DC37145BCEF1E2B282BD4852AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -711,8 +747,8 @@
 		B4ECBDB7F4DC5BD0CFFD80B65293EBC5 /* Build configuration list for PBXNativeTarget "Pods-GYAlertController_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1A866424A9BED2C6A14CD22B08827F2E /* Debug */,
-				ABB90B72ECE83D67E8132B39AC770A07 /* Release */,
+				6EE9DD143A4CA23F941C44AFEB9476A6 /* Debug */,
+				9781757C93D5576B891CD72EC488DA4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -10,6 +10,11 @@
 #endif
 #endif
 
+#import "GYAlertAction.h"
+#import "GYAlertController.h"
+#import "GYAlertControllerView.h"
+#import "GYAnimationController.h"
+#import "GYPresentationController.h"
 
 FOUNDATION_EXPORT double GYAlertControllerVersionNumber;
 FOUNDATION_EXPORT const unsigned char GYAlertControllerVersionString[];

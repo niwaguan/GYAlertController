@@ -24,7 +24,7 @@ A custom UI Component like UIAlertController. But it provides great flexibility 
   s.homepage         = 'https://github.com/Goyaya/GYAlertController'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Goyaya' => 'goyaya@yeah.net' }
+  s.author           = { 'Gyang' => 'goyaya@yeah.net' }
   s.source           = { :git => 'https://github.com/Goyaya/GYAlertController.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
