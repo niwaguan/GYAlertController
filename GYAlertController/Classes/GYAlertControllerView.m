@@ -16,7 +16,7 @@
 /// line
 @property (nonatomic, readwrite, strong) CAShapeLayer *bottomLineLayer;
 @end
-CGFloat const kDefaultMargin = 15;
+CGFloat const kGYDefaultMargin = 15;
 @implementation GYAlertControllerHeaderView
 
 
@@ -25,7 +25,7 @@ CGFloat const kDefaultMargin = 15;
     CGSize refSize = CGSizeMake(width, CGFLOAT_MAX);
     height += [_titleLabel sizeThatFits:refSize].height;
     height += [_messageLabel sizeThatFits:refSize].height;
-    height += (3 * kDefaultMargin);
+    height += (3 * kGYDefaultMargin);
     return height;
 }
 
@@ -85,19 +85,19 @@ CGFloat const kDefaultMargin = 15;
     BOOL needsUpdateMessageLabel = _messageLabel.text && _messageLabel.text.length > 0;
     if (needsUpdateTitleLabel && needsUpdateMessageLabel) {
         CGSize refSize = size;
-        refSize.width -= (kDefaultMargin * 2);
+        refSize.width -= (kGYDefaultMargin * 2);
         
         CGSize requiredSize = [_titleLabel sizeThatFits:refSize];
-        _titleLabel.frame = CGRectMake(kDefaultMargin, kDefaultMargin, refSize.width, requiredSize.height);
+        _titleLabel.frame = CGRectMake(kGYDefaultMargin, kGYDefaultMargin, refSize.width, requiredSize.height);
         
         requiredSize = [_messageLabel sizeThatFits:refSize];
-        _messageLabel.frame = CGRectMake(kDefaultMargin, CGRectGetMaxY(_titleLabel.frame) + kDefaultMargin, refSize.width, requiredSize.height);
+        _messageLabel.frame = CGRectMake(kGYDefaultMargin, CGRectGetMaxY(_titleLabel.frame) + kGYDefaultMargin, refSize.width, requiredSize.height);
     }
     else if (needsUpdateTitleLabel) {
-        _messageLabel.frame = CGRectMake(kDefaultMargin, kDefaultMargin, size.width - 2 * kDefaultMargin, size.height - 2 * kDefaultMargin);
+        _messageLabel.frame = CGRectMake(kGYDefaultMargin, kGYDefaultMargin, size.width - 2 * kGYDefaultMargin, size.height - 2 * kGYDefaultMargin);
     }
     else if (needsUpdateMessageLabel) {
-        _messageLabel.frame = CGRectMake(kDefaultMargin, kDefaultMargin, size.width - 2 * kDefaultMargin, size.height - 2 * kDefaultMargin);
+        _messageLabel.frame = CGRectMake(kGYDefaultMargin, kGYDefaultMargin, size.width - 2 * kGYDefaultMargin, size.height - 2 * kGYDefaultMargin);
     }
     if (NO == _bottomLineLayer.hidden) {
         UIBezierPath *path = [UIBezierPath bezierPath];
@@ -180,35 +180,35 @@ CGFloat const kDefaultMargin = 15;
             
             if (_leftIconImgView.image) {
                 CGSize imgSize = _leftIconImgView.image.size;
-                _leftIconImgView.frame = CGRectMake(CGRectGetMinX(_titleLabel.frame) - kDefaultMargin - imgSize.width, (size.height - imgSize.height) / 2.0, imgSize.width, imgSize.height);
+                _leftIconImgView.frame = CGRectMake(CGRectGetMinX(_titleLabel.frame) - kGYDefaultMargin - imgSize.width, (size.height - imgSize.height) / 2.0, imgSize.width, imgSize.height);
             }
             if (_rightIconImgView.image) {
                 CGSize imgSize = _rightIconImgView.image.size;
-                _rightIconImgView.frame = CGRectMake(CGRectGetMaxX(_titleLabel.frame) + kDefaultMargin, (size.height - imgSize.height) / 2.0, imgSize.width, imgSize.height);
+                _rightIconImgView.frame = CGRectMake(CGRectGetMaxX(_titleLabel.frame) + kGYDefaultMargin, (size.height - imgSize.height) / 2.0, imgSize.width, imgSize.height);
             }
         }break;
         case GYAlertControllerActionCellLayoutStrategyLeft:{
             _titleLabel.textAlignment = NSTextAlignmentLeft;
             if (_leftIconImgView.image) {
                 CGSize imgSize = _leftIconImgView.image.size;
-                _leftIconImgView.frame = CGRectMake(kDefaultMargin, (size.height - imgSize.height) / 2.0, imgSize.width, imgSize.height);
+                _leftIconImgView.frame = CGRectMake(kGYDefaultMargin, (size.height - imgSize.height) / 2.0, imgSize.width, imgSize.height);
             }
-            CGFloat titleLabelOriginX = kDefaultMargin;
+            CGFloat titleLabelOriginX = kGYDefaultMargin;
             if (_leftIconImgView.image) {
-                titleLabelOriginX += (_leftIconImgView.image.size.width + kDefaultMargin);
+                titleLabelOriginX += (_leftIconImgView.image.size.width + kGYDefaultMargin);
             }
             titleLabelFrame.origin.x = titleLabelOriginX;
             _titleLabel.frame = titleLabelFrame;
             
             if (_rightIconImgView.image) {
                 CGSize imgSize = _rightIconImgView.image.size;
-                CGFloat rightImgViewOriginX = kDefaultMargin;
+                CGFloat rightImgViewOriginX = kGYDefaultMargin;
                 if (_leftIconImgView.image) {
-                    rightImgViewOriginX += (_leftIconImgView.frame.size.width + kDefaultMargin);
+                    rightImgViewOriginX += (_leftIconImgView.frame.size.width + kGYDefaultMargin);
                 }
                 
                 if (_titleLabel.text && _titleLabel.text.length > 0) {
-                    rightImgViewOriginX += (_titleLabel.frame.size.width + kDefaultMargin);
+                    rightImgViewOriginX += (_titleLabel.frame.size.width + kGYDefaultMargin);
                 }
                 _rightIconImgView.frame = CGRectMake(rightImgViewOriginX, (size.height - imgSize.height) / 2.0, imgSize.width, imgSize.height);
             }
@@ -219,24 +219,24 @@ CGFloat const kDefaultMargin = 15;
             _titleLabel.textAlignment = NSTextAlignmentRight;
             if (_rightIconImgView.image) {
                 CGSize imgSize = _rightIconImgView.image.size;
-                _rightIconImgView.frame = CGRectMake(size.width - kDefaultMargin - imgSize.width, (size.height - imgSize.height) / 2.0, imgSize.width, imgSize.height);
+                _rightIconImgView.frame = CGRectMake(size.width - kGYDefaultMargin - imgSize.width, (size.height - imgSize.height) / 2.0, imgSize.width, imgSize.height);
             }
             
-            titleLabelFrame.origin.x = size.width - titleLabelFrame.size.width - kDefaultMargin;
+            titleLabelFrame.origin.x = size.width - titleLabelFrame.size.width - kGYDefaultMargin;
             if (_rightIconImgView.image) {
-                titleLabelFrame.origin.x -= (_rightIconImgView.image.size.width + kDefaultMargin);
+                titleLabelFrame.origin.x -= (_rightIconImgView.image.size.width + kGYDefaultMargin);
             }
             _titleLabel.frame = titleLabelFrame;
             
             if (_leftIconImgView.image) {
                 CGSize imgSize = _leftIconImgView.image.size;
-                CGFloat leftImgViewOriginX = size.width - _leftIconImgView.image.size.width - kDefaultMargin;
+                CGFloat leftImgViewOriginX = size.width - _leftIconImgView.image.size.width - kGYDefaultMargin;
                 if (_rightIconImgView.image) {
-                    leftImgViewOriginX -= (_rightIconImgView.image.size.width + kDefaultMargin);
+                    leftImgViewOriginX -= (_rightIconImgView.image.size.width + kGYDefaultMargin);
                 }
                 
                 if (_titleLabel.text && _titleLabel.text.length > 0) {
-                    leftImgViewOriginX -= (titleLabelFrame.size.width + kDefaultMargin);
+                    leftImgViewOriginX -= (titleLabelFrame.size.width + kGYDefaultMargin);
                 }
                 
                 _leftIconImgView.frame = CGRectMake(leftImgViewOriginX, (size.height - imgSize.height) / 2.0, imgSize.width, imgSize.height);

@@ -8,7 +8,7 @@
 
 #import "GYAnimationController.h"
 
-CGFloat const kDefaultAnimationDuration = .25;
+CGFloat const kGYDefaultAnimationDuration = .25;
 
 @interface GYAnimationController()
 @property (nonatomic, readwrite, assign) CGRect presentedViewFrame;
@@ -27,7 +27,7 @@ CGFloat const kDefaultAnimationDuration = .25;
 }
 
 - (NSTimeInterval)transitionDuration:(nullable id <UIViewControllerContextTransitioning>)transitionContext {
-    return kDefaultAnimationDuration;
+    return kGYDefaultAnimationDuration;
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext { }

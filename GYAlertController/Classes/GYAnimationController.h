@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 /// 默认动画时长，0.35s
-UIKIT_EXTERN CGFloat const kDefaultAnimationDuration;
+UIKIT_EXTERN CGFloat const kGYDefaultAnimationDuration;
 
 /**
  动画类型

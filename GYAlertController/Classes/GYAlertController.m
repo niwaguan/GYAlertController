@@ -358,7 +358,7 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
     else {
         fullWidth = _preferredWidth;
     }
-    return fullWidth - 2 * kDefaultMargin - insets.left - insets.right;
+    return fullWidth - 2 * kGYDefaultMargin - insets.left - insets.right;
 }
 /// 内容需要的高度
 - (CGFloat)contentNeedsHeight {

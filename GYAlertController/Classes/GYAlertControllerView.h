@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-FOUNDATION_EXTERN CGFloat const kDefaultMargin;
+FOUNDATION_EXTERN CGFloat const kGYDefaultMargin;
 @interface GYAlertControllerHeaderView : UIView
 
 @property (nonatomic, readonly, strong) UILabel *titleLabel;
