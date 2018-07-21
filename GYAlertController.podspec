@@ -18,11 +18,11 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-A custom UI Component like UIAlertController. But it provides great flexibility and dynamism. You have more choices to make difference, such as title style, message style, alert title style and so on.
+A custom UI Component like UIAlertController. But it provides great flexibility and dynamism. You have more choices to make difference, such as title style, message style, alert title style and so on. Support iPhoneX and iOS 11.
                        DESC
 
   s.homepage         = 'https://github.com/Goyaya/GYAlertController'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  # s.screenshots     = 'https://github.com/Goyaya/GYAlertController/blob/master/Snapshots/fill-p@2x.png?raw=true', 'https://github.com/Goyaya/GYAlertController/blob/master/Snapshots/empty-p@2x.png?raw=true'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Gyang' => 'goyaya@yeah.net' }
   s.source           = { :git => 'https://github.com/Goyaya/GYAlertController.git', :tag => s.version.to_s }
