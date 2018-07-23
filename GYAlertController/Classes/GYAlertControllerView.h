@@ -11,6 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 FOUNDATION_EXTERN CGFloat const kGYDefaultMargin;
+FOUNDATION_EXTERN CGFloat const kGYMinFontSize;
+FOUNDATION_EXTERN CGFloat const kGYNormalFontSize;
+
 @interface GYAlertControllerHeaderView : UIView
 
 @property (nonatomic, readonly, strong) UILabel *titleLabel;

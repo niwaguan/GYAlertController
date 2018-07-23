@@ -1,6 +1,6 @@
 # GYAlertController
 
-[![CI Status](https://img.shields.io/travis/Gyang/GYAlertController.svg?style=flat)](https://travis-ci.org/Goyaya/GYAlertController.svg?branch=master)
+[![Build Status](https://travis-ci.com/Goyaya/GYAlertController.svg?branch=master)](https://travis-ci.com/Goyaya/GYAlertController)
 [![Version](https://img.shields.io/cocoapods/v/GYAlertController.svg?style=flat)](https://cocoapods.org/pods/GYAlertController)
 [![License](https://img.shields.io/cocoapods/l/GYAlertController.svg?style=flat)](https://cocoapods.org/pods/GYAlertController)
 [![Platform](https://img.shields.io/cocoapods/p/GYAlertController.svg?style=flat)](https://cocoapods.org/pods/GYAlertController)

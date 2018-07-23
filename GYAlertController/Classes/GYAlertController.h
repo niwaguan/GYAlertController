@@ -34,8 +34,17 @@ typedef NS_ENUM(NSInteger, GYAlertControllerStyle) {
 
 @property (nullable, nonatomic, copy) NSAttributedString *attributedTitle;
 @property (nullable, nonatomic, copy) NSAttributedString *message;
-@property (nonatomic, readonly) GYAlertControllerStyle preferredStyle;
+@property (nonatomic, readonly, assign) GYAlertControllerStyle preferredStyle;
 @property (nonatomic, readonly, assign) GYAnimationControllerStyle animationStyle;
+/// 偏好高度（或宽度）:
+/// <= 0，根据每个action配置的高度自动调整整个视图的高度（或宽度）；
+/// 0 ~ 1（包含），按父视图高度（或宽度）百分比调整高度（或宽度）；
+/// > 1，绝对高度（或宽度），整个视图的高度（或宽度）等于设定值。
+@property (nonatomic, readwrite, assign) CGFloat preferredHeight;
+/// 参见 `preferredHeight` 描述
+@property (nonatomic, readwrite, assign) CGFloat preferredWidth;
+/// 允许点击背景dismiss, 默认YES
+@property (nonatomic, readwrite, assign) BOOL dismissOnBackgroundTapped;
 
 + (instancetype)alertControllerWithTitle:(nullable NSAttributedString *)attributedTitle
                                  message:(nullable NSAttributedString *)message
@@ -49,16 +58,6 @@ typedef NS_ENUM(NSInteger, GYAlertControllerStyle) {
 @property (nonatomic, readonly) NSArray<GYAlertAction *> *actions;
 - (void)addAction:(GYAlertAction *)action;
 
-/// 允许点击背景dismiss, 默认YES
-@property (nonatomic, readwrite, assign) BOOL dismissOnBackgroundTapped;
-
-/// 偏好高度（或宽度）:
-/// <= 0，根据每个action配置的高度自动调整整个视图的高度（或宽度）；
-/// 0 ~ 1（包含），按父视图高度（或宽度）百分比调整高度（或宽度）；
-/// > 1，绝对高度（或宽度），整个视图的高度（或宽度）等于设定值。
-@property (nonatomic, readwrite, assign) CGFloat preferredHeight;
-/// 参见 `preferredHeight` 描述
-@property (nonatomic, readwrite, assign) CGFloat preferredWidth;
 
 @end
 

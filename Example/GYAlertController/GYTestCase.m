@@ -29,6 +29,13 @@
 
 @implementation GYTestCase
 
+- (NSString *)styleDescription {
+    if (_alertStyle == 0) {
+        return @"AlertSheet";
+    }
+    return @"Alert";
+}
+
 - (instancetype)initWithTitle:(NSString * _Nullable)title
                       message:(NSString * _Nullable)message
                  actions:(NSArray<GYTestCaseAction *> * _Nullable)acitonTitles {

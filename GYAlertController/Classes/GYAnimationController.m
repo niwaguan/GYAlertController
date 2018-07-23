@@ -8,7 +8,11 @@
 
 #import "GYAnimationController.h"
 
+#ifdef DEBUG
+CGFloat const kGYDefaultAnimationDuration = 2.5;
+#else
 CGFloat const kGYDefaultAnimationDuration = .25;
+#endif
 
 @interface GYAnimationController()
 @property (nonatomic, readwrite, assign) CGRect presentedViewFrame;
@@ -49,7 +53,7 @@ CGFloat const kGYDefaultAnimationDuration = .25;
         [containerView addSubview:toView];
         
         CGRect finalFrame = [transitionContext finalFrameForViewController:toVC];
-        toView.frame = CGRectOffset(finalFrame, 0, finalFrame.size.height);
+        toView.frame = CGRectOffset(finalFrame, 0, UIScreen.mainScreen.bounds.size.height - finalFrame.origin.y);
         
         [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
             toView.frame = finalFrame;
@@ -64,7 +68,7 @@ CGFloat const kGYDefaultAnimationDuration = .25;
         CGRect initFrame = [transitionContext initialFrameForViewController:fromVC];
         
         [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-            fromView.frame = CGRectOffset(initFrame, 0, initFrame.size.height);
+            fromView.frame = CGRectOffset(initFrame, 0, UIScreen.mainScreen.bounds.size.height - initFrame.size.height);
         } completion:^(BOOL finished) {
             BOOL canceled = [transitionContext transitionWasCancelled];
             [transitionContext completeTransition:!canceled];
