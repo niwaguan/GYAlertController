@@ -30,6 +30,8 @@
 @property (nonatomic, readwrite, assign) float preferredHeight;
 @property (nonatomic, readwrite, assign) float preferredWidth;
 @property (nonatomic, readwrite, assign) NSInteger preferredStyle;
+@property (nonatomic, readwrite, assign) NSInteger alertStyle;
+@property (nonatomic, readonly, strong) NSString *styleDescription;
 
 @property (nonatomic, nullable, readwrite, copy) NSString *title;
 @property (nonatomic, nullable, readwrite, copy) NSString *message;

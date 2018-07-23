@@ -16,7 +16,11 @@
 /// line
 @property (nonatomic, readwrite, strong) CAShapeLayer *bottomLineLayer;
 @end
+
 CGFloat const kGYDefaultMargin = 15;
+CGFloat const kGYMinFontSize = 12;
+CGFloat const kGYNormalFontSize = 14;
+
 @implementation GYAlertControllerHeaderView
 
 
@@ -40,7 +44,7 @@ CGFloat const kGYDefaultMargin = 15;
         label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
         label.textAlignment = NSTextAlignmentCenter;
-        label.font = [UIFont boldSystemFontOfSize:14];
+        label.font = [UIFont boldSystemFontOfSize:kGYNormalFontSize];
         
         label;
     });
@@ -51,7 +55,7 @@ CGFloat const kGYDefaultMargin = 15;
         label.numberOfLines = 0;
         label.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         label.textAlignment = NSTextAlignmentCenter;
-        label.font = [UIFont systemFontOfSize:12];
+        label.font = [UIFont systemFontOfSize:kGYMinFontSize];
         
         label;
     });

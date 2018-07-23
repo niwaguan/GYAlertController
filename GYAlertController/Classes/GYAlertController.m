@@ -9,16 +9,16 @@
 #import "GYAlertController.h"
 #import <objc/message.h>
 
-static CGSize const kIPhoneXSize = (CGSize){1125.0, 2436.0};
+static CGSize const kGYIPhoneXSize = (CGSize){1125.0, 2436.0};
 
-BOOL iSiPhoneX() {
-    return [UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(UIScreen.mainScreen.currentMode.size, kIPhoneXSize) : NO;
+BOOL _iSiPhoneX() {
+    return [UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(UIScreen.mainScreen.currentMode.size, kGYIPhoneXSize) : NO;
 }
 
-CGFloat screenWidth() { return UIScreen.mainScreen.bounds.size.width; }
-CGFloat screenHeight() { return UIScreen.mainScreen.bounds.size.height; }
+CGFloat _screenWidth() { return UIScreen.mainScreen.bounds.size.width; }
+CGFloat _screenHeight() { return UIScreen.mainScreen.bounds.size.height; }
 
-NSAttributedString* attributedString(NSString *text, NSDictionary<NSAttributedStringKey, id> *attribute) {
+NSAttributedString* attributedString(NSString *text, NSDictionary<NSString *, id> *attribute) {
     if (nil == text) return nil;
     
     return [[NSAttributedString alloc] initWithString:text attributes:attribute];
@@ -27,19 +27,19 @@ NSAttributedString* attributedString(NSString *text, NSDictionary<NSAttributedSt
 NSAttributedString* kDefaultTitleAttributedString(NSString *text) {
     return attributedString(text, @{
                                     NSForegroundColorAttributeName: UIColor.blackColor,
-                                    NSFontAttributeName: [UIFont boldSystemFontOfSize:14]
+                                    NSFontAttributeName: [UIFont boldSystemFontOfSize:kGYNormalFontSize]
                                     });
 }
 NSAttributedString* kDefaultMessageAttributedString(NSString *text) {
     return attributedString(text, @{
                                     NSForegroundColorAttributeName: [UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:1.0],
-                                    NSFontAttributeName: [UIFont boldSystemFontOfSize:12]
+                                    NSFontAttributeName: [UIFont systemFontOfSize:kGYMinFontSize]
                                     });
 }
 NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
     return attributedString(text, @{
-                                    NSForegroundColorAttributeName: [UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:1.0],
-                                    NSFontAttributeName: [UIFont boldSystemFontOfSize:12]
+                                    NSForegroundColorAttributeName: UIColor.blackColor,
+                                    NSFontAttributeName: [UIFont systemFontOfSize:kGYMinFontSize]
                                     });
 }
 
@@ -239,7 +239,7 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
         GYAlertControllerHeaderView *header = [[GYAlertControllerHeaderView alloc] init];
         header.titleLabel.attributedText = _attributedTitle;
         header.messageLabel.attributedText = _message;
-        header.frame = CGRectMake(0, 0, screenWidth(), [header heightForWidth:[self adaptiveContentWidth]]);
+        header.frame = CGRectMake(0, 0, _screenWidth(), [header heightForWidth:[self adaptiveContentWidth]]);
         _tableView.tableHeaderView = header;
         self.headerTitleMessageView = header;
         if (self.interActions.count <= 0) {
@@ -303,7 +303,7 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
 /// override
 - (void)updateViewConstraints {
     if (self.headerTitleMessageView) {
-        self.headerTitleMessageView.frame = CGRectMake(0, 0, screenWidth(), [self.headerTitleMessageView heightForWidth:[self adaptiveContentWidth]]);
+        self.headerTitleMessageView.frame = CGRectMake(0, 0, _screenWidth(), [self.headerTitleMessageView heightForWidth:[self adaptiveContentWidth]]);
         if (self.tableView.tableHeaderView) {
             self.tableView.tableHeaderView = nil;
         }
@@ -340,7 +340,7 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
 /// 整个视图的高度，包含了非安全区
 - (CGFloat)adaptiveTotalHeight {
     __block CGFloat total = [self contentNeedsHeight];
-    if (iSiPhoneX() && _preferredStyle == GYAlertControllerStyleActionSheet) {
+    if (_iSiPhoneX() && _preferredStyle == GYAlertControllerStyleActionSheet) {
         CGFloat offset = [self adaptiveLayoutInsets].bottom;
         total += offset;
     }
@@ -350,7 +350,7 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
 /// 内容的宽度，去掉margin和非安全区部分
 - (CGFloat)adaptiveContentWidth {
     UIEdgeInsets insets = [self adaptiveLayoutInsets];
-    CGFloat fullWidth = screenWidth();
+    CGFloat fullWidth = _screenWidth();
     if (_preferredWidth <= 0) { }
     else if (_preferredWidth <= 1) {
         fullWidth = fullWidth * _preferredWidth;
@@ -384,8 +384,8 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
 }
 /// 更新self.view(transition过程中的presentedView)frame
 - (void)updatePresentedViewFrame {
-    CGFloat sw = screenWidth();
-    CGFloat sh = screenHeight();
+    CGFloat sw = _screenWidth();
+    CGFloat sh = _screenHeight();
     // width
     CGFloat width = 0;
     if (_preferredWidth <= 0) {
@@ -444,7 +444,9 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
 #pragma mark - debug
 
 - (void)dealloc {
+#ifdef DEBUG
     NSLog(@"%s", __func__);
+#endif
 }
 
 

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class GYAlertControllerActionCell;
 typedef void(^GYAlertActionConfiguration)(GYAlertControllerActionCell *actionCell);
 typedef void(^GYAlertActionHandler)(void);
@@ -35,7 +37,9 @@ typedef void(^GYAlertActionHandler)(void);
 
 + (instancetype)defaultStyleActionWithTitle:(NSAttributedString *)title
                                     handler:(GYAlertActionHandler)handler;
-- (instancetype)initWithTitle:(NSAttributedString *)title
+- (instancetype)initWithTitle:(nullable NSAttributedString *)title
                 configuration:(nullable GYAlertActionConfiguration)configuration
-                      handler:(GYAlertActionHandler)handler;
+                      handler:(nullable GYAlertActionHandler)handler;
 @end
+
+NS_ASSUME_NONNULL_END

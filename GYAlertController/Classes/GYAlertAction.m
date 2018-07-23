@@ -8,7 +8,7 @@
 
 #import "GYAlertAction.h"
 
-CGFloat const kDefaultAlertHeight = 44.0;
+CGFloat const kGYDefaultAlertHeight = 44.0;
 @interface GYAlertAction()
 /// handler
 @property (nonatomic, readwrite, copy) GYAlertActionHandler handler;
@@ -40,7 +40,7 @@ CGFloat const kDefaultAlertHeight = 44.0;
 #pragma mark - assist
 
 - (void)setupDefaultValues {
-    _height = kDefaultAlertHeight;
+    _height = kGYDefaultAlertHeight;
     _controllerDismissOnHandlerInvoked = YES;
 }
 
