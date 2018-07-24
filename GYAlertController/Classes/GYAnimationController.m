@@ -8,11 +8,8 @@
 
 #import "GYAnimationController.h"
 
-#ifdef DEBUG
-CGFloat const kGYDefaultAnimationDuration = 2.5;
-#else
+//CGFloat const kGYDefaultAnimationDuration = 2.5;
 CGFloat const kGYDefaultAnimationDuration = .25;
-#endif
 
 @interface GYAnimationController()
 @property (nonatomic, readwrite, assign) CGRect presentedViewFrame;
