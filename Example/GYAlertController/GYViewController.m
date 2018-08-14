@@ -147,7 +147,8 @@
     }];
     ok.invokeHandlerAfterDismiss = YES; // 看这里
     [controller addAction:ok];
-    
+    controller.preferredWidth = 0.8;
+    controller.cornerRadius = 10;
     GYAlertAction *cancel = [[GYAlertAction alloc] initWithTitle:nil
                                                    configuration:^(GYAlertControllerActionCell *actionCell)
                              {

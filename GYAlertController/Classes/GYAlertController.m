@@ -220,6 +220,11 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
 
 - (void)setupUI {
     
+    if (_cornerRadius) {
+        self.view.layer.cornerRadius = _cornerRadius;
+        self.view.layer.masksToBounds = YES;
+    }
+    
     _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     _tableView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:_tableView];

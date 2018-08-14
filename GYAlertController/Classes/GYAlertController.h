@@ -58,6 +58,9 @@ typedef NS_ENUM(NSInteger, GYAlertControllerStyle) {
 @property (nonatomic, readonly) NSArray<GYAlertAction *> *actions;
 - (void)addAction:(GYAlertAction *)action;
 
+/// 整体圆角
+@property (nonatomic, readwrite, assign) CGFloat cornerRadius;
+
 
 @end
 
