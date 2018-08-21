@@ -157,12 +157,18 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     GYAlertAction *action = self.interActions[section];
-    return [self tableHeaderFooterViewWithBgColor:action.topMarginColor];
+    if (action.topMargin > 0) {
+        return [self tableHeaderFooterViewWithBgColor:action.topMarginColor];
+    }
+    return nil;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     GYAlertAction *action = self.interActions[section];
-    return [self tableHeaderFooterViewWithBgColor:action.bottomMarginColor];
+    if (action.bottomMargin > 0) {
+        return [self tableHeaderFooterViewWithBgColor:action.bottomMarginColor];
+    }
+    return nil;
 }
 
 
@@ -266,8 +272,9 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
 
 - (UIView *)tableHeaderFooterViewWithBgColor:(UIColor * _Nullable)color {
     if (nil == color) {
-        color = [UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:0.5];
+        color = [UIColor colorWithRed:0.945 green:0.949 blue:0.957 alpha:1.0];
     }
+    
     UIView *view = [[UIView alloc] init];
     view.backgroundColor = color;
     return view;

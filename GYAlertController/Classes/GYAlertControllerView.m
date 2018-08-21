@@ -61,8 +61,8 @@ CGFloat const kGYNormalFontSize = 14;
     });
     
     _bottomLineLayer = [CAShapeLayer layer];
-    _bottomLineLayer.strokeColor = UIColor.lightGrayColor.CGColor;
-    _bottomLineLayer.lineWidth = 0.5;
+    _bottomLineLayer.strokeColor = [UIColor colorWithRed:0.945 green:0.949 blue:0.957 alpha:1.0].CGColor;
+    _bottomLineLayer.lineWidth = 1;
     [self.layer addSublayer:_bottomLineLayer];
 }
 
@@ -165,8 +165,8 @@ CGFloat const kGYNormalFontSize = 14;
     
     
     _bottomLineLayer = [CAShapeLayer layer];
-    _bottomLineLayer.strokeColor = UIColor.lightGrayColor.CGColor;
-    _bottomLineLayer.lineWidth = 0.5;
+    _bottomLineLayer.strokeColor = [UIColor colorWithRed:0.945 green:0.949 blue:0.957 alpha:1.0].CGColor;
+    _bottomLineLayer.lineWidth = 1;
     [self.contentView.layer addSublayer:_bottomLineLayer];
 }
 
