@@ -54,12 +54,20 @@ typedef NS_ENUM(NSInteger, GYAlertControllerStyle) {
                                  message:(nullable NSAttributedString *)message
                           preferredStyle:(GYAlertControllerStyle)preferredStyle
                           animationStyle:(GYAnimationControllerStyle)animationStyle;
+/// 根据自定义视图初始化。
+/// 内部会通过view.frame提供的size信息，结合GYAlertControllerStyle值调整其位置。
+/// 若你想根据屏幕宽高比例进行布局，配置 view.frame.size 的 width, height 为 0..<1 区间值。参考`preferredHeight`属性描述
++ (instancetype)alertControllerWithView:(UIView *)view
+                         preferredStyle:(GYAlertControllerStyle)preferredStyle
+                         animationStyle:(GYAnimationControllerStyle)animationStyle;
 
 @property (nonatomic, readonly) NSArray<GYAlertAction *> *actions;
 - (void)addAction:(GYAlertAction *)action;
 
 /// 整体圆角
 @property (nonatomic, readwrite, assign) CGFloat cornerRadius;
+/// 是否在安全区之外显示；默认NO，只在安全区之内显示
+@property (nonatomic, readwrite, assign) BOOL ignoreSafeArea;
 
 
 @end

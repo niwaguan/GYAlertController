@@ -10,9 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@class GYAlertControllerActionCell;
+@class GYAlertAction, GYAlertControllerActionCell;
 typedef void(^GYAlertActionConfiguration)(GYAlertControllerActionCell *actionCell);
-typedef void(^GYAlertActionHandler)(void);
+typedef void(^GYAlertActionHandler)(GYAlertAction *action, NSInteger index);
 
 @interface GYAlertAction : NSObject
 

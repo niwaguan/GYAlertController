@@ -8,12 +8,7 @@
 
 #import "GYAlertController.h"
 #import <objc/message.h>
-
-static CGSize const kGYIPhoneXSize = (CGSize){1125.0, 2436.0};
-
-BOOL _iSiPhoneX() {
-    return [UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(UIScreen.mainScreen.currentMode.size, kGYIPhoneXSize) : NO;
-}
+#import <sys/utsname.h>
 
 CGFloat _screenWidth() { return UIScreen.mainScreen.bounds.size.width; }
 CGFloat _screenHeight() { return UIScreen.mainScreen.bounds.size.height; }
@@ -61,11 +56,18 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
 /// contentFrame
 @property (nonatomic, readwrite, assign) CGRect presentedViewFrame;
 
+/// 自定义视图
+@property (nonatomic, readwrite, strong) UIView *customView;
+/// 用户自定义的customView.frame
+@property (nonatomic, readwrite, assign) CGRect preferredCustomViewFrame;
+/// 框架添加的对于外部视图的约束
+@property (nonatomic, readwrite, strong) NSArray<NSLayoutConstraint *> *customViewConstraints;
+
 @end
 
 @implementation GYAlertController
 
-#pragma mark - init
+#pragma mark - public
 
 + (instancetype)alertControllerWithTitle:(nullable NSAttributedString *)attributedTitle
                                  message:(nullable NSAttributedString *)message
@@ -85,6 +87,15 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
     return controller;
 }
 
++ (instancetype)alertControllerWithView:(UIView *)view
+                         preferredStyle:(GYAlertControllerStyle)preferredStyle
+                         animationStyle:(GYAnimationControllerStyle)animationStyle {
+    GYAlertController *controller = [self alertControllerWithTitle:nil message:nil preferredStyle:preferredStyle animationStyle:animationStyle];
+    controller.customView = view;
+    controller.preferredCustomViewFrame = view.frame;
+    return controller;
+}
+
 - (NSArray<GYAlertAction *> *)actions {
     return _interActions.copy;
 }
@@ -92,6 +103,8 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
 - (void)addAction:(GYAlertAction *)action {
     [self.interActions addObject:action];
 }
+
+#pragma mark - lifeCycle
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -102,7 +115,9 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
     return self;
 }
 
-#pragma mark - lifeCycle
+- (void)loadView {
+    self.view = [self contentView];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -120,25 +135,26 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    GYAlertAction *action = self.interActions[indexPath.section];
+    NSInteger index = indexPath.section;
+    GYAlertAction *action = self.interActions[index];
     if (action.controllerDismissOnHandlerInvoked) {
         if (action.invokeHandlerAfterDismiss) {
             [self dismissViewControllerAnimated:YES completion:^{
                 if (action.handler) {
-                    action.handler();
+                    action.handler(action, index);
                 }
             }];
             return;
         }
         
         if (action.handler) {
-            action.handler();
+            action.handler(action, index);
         }
         [self dismissViewControllerAnimated:YES completion:nil];
     }
     else {
         if (action.handler) {
-            action.handler();
+            action.handler(action, index);
         }
     }
 }
@@ -206,19 +222,23 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
 }
 
 #pragma mark - GYPresentationControllerProtocol
+
 - (void)presentationController:(GYPresentationController *)controller didClickBackgroundView:(UIView *)bgView {
     if (!_dismissOnBackgroundTapped)  return;
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 /// containerView 是 presentedVC.view（self.view） 的父视图，这里可以对其布局
 - (void)presentationController:(GYPresentationController *)controller willLayoutSubviewsInContainerView:(UIView *)containerView {
-    [self updatePresentedViewFrame];
+    [self updatePresentedViewFrameWithSuperView:containerView];
     controller.presentedView.frame = self.presentedViewFrame;
 }
+
 /// presentedView是指self.view
 - (CGRect)presentationController:(GYPresentationController *)controller presentedViewFrameInContainerView:(UIView *)containerView {
-    [self updatePresentedViewFrame];
+    
+    [self updatePresentedViewFrameWithSuperView:containerView];
     return self.presentedViewFrame;
 }
 
@@ -231,35 +251,14 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
         self.view.layer.masksToBounds = YES;
     }
     
-    _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-    _tableView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.view addSubview:_tableView];
-    _tableView.delegate = self;
-    _tableView.dataSource = self;
-    _tableView.scrollEnabled = NO;
-    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _tableView.showsVerticalScrollIndicator = NO;
-    _tableView.showsHorizontalScrollIndicator = NO;
-    _tableView.estimatedRowHeight = 0;
-    _tableView.estimatedSectionHeaderHeight = 0;
-    _tableView.estimatedSectionFooterHeight = 0;
-    
-    [_tableView registerClass:GYAlertControllerActionCell.class forCellReuseIdentifier:NSStringFromClass(GYAlertControllerActionCell.class)];
-    
     if ((_attributedTitle && _attributedTitle.length > 0) || (_message && _message.length > 0)) {
         GYAlertControllerHeaderView *header = [[GYAlertControllerHeaderView alloc] init];
         header.titleLabel.attributedText = _attributedTitle;
         header.messageLabel.attributedText = _message;
-        header.frame = CGRectMake(0, 0, _screenWidth(), [header heightForWidth:[self adaptiveContentWidth]]);
-        _tableView.tableHeaderView = header;
+        header.bottomLineLayer.hidden = self.interActions.count <= 0;
+        self.tableView.tableHeaderView = header;
         self.headerTitleMessageView = header;
-        if (self.interActions.count <= 0) {
-            header.bottomLineLayer.hidden = YES;
-        }
     }
-    
-    /// iOS 8.1 不会自动触发 updateViewConstraints 方法
-    [self.view setNeedsUpdateConstraints];
 }
 
 - (void)setupDefaultValues {
@@ -301,140 +300,147 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
     }
 }
 
-
 #pragma mark - layout
-/// override
-- (void)viewSafeAreaInsetsDidChange {
-    [super viewSafeAreaInsetsDidChange];
-    [self.view setNeedsUpdateConstraints];
-}
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
-    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-    [self.view setNeedsUpdateConstraints];
-}
-/// override
-- (void)updateViewConstraints {
-    if (self.headerTitleMessageView) {
-        self.headerTitleMessageView.frame = CGRectMake(0, 0, _screenWidth(), [self.headerTitleMessageView heightForWidth:[self adaptiveContentWidth]]);
-        if (self.tableView.tableHeaderView) {
-            self.tableView.tableHeaderView = nil;
+
+/// 内容宽度
+- (CGFloat)contentViewMaxWidth {
+    CGFloat total = 0;
+    if (_customView) {
+        total = _preferredCustomViewFrame.size.width;
+        if (total <= 0) {
+            total = _screenWidth();
+        } else if (total <= 1) {
+            total = total * _screenWidth();
         }
-        self.tableView.tableHeaderView = self.headerTitleMessageView;
-    }
-    if (self.tableViewConstraints && self.tableViewConstraints.count > 0) {
-        [NSLayoutConstraint deactivateConstraints:self.tableViewConstraints];
-        self.tableViewConstraints = nil;
-    }
-    
-    NSMutableArray<NSLayoutConstraint *> *constraints = @[].mutableCopy;
-    
-    UIEdgeInsets insets = [self adaptiveLayoutInsets];
-    
-    NSString *hFormatter = [NSString stringWithFormat:@"H:|-%f-[_tableView]-%f-|", insets.left, insets.right];
-    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:hFormatter options:NSLayoutFormatDirectionLeftToRight metrics:@{} views:NSDictionaryOfVariableBindings(_tableView)]];
-    
-    NSString *vFormatter = [NSString stringWithFormat:@"V:|-0-[_tableView]-%f-|", insets.bottom];
-    [constraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:vFormatter options:NSLayoutFormatDirectionLeftToRight metrics:@{} views:NSDictionaryOfVariableBindings(_tableView)]];
-    
-    // 解决 UIView-Encapsulated-Layout-Height 冲突问题
-    // see also https://stackoverflow.com/questions/23308400/auto-layout-what-creates-constraints-named-uiview-encapsulated-layout-width-h/23910943#23910943
-    [constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        obj.priority = UILayoutPriorityDefaultLow;
-    }];
-    // end
-    
-    [NSLayoutConstraint activateConstraints:constraints];
-    self.tableViewConstraints = constraints.copy;
-    
-    [super updateViewConstraints];
-}
-
-/// 整个视图的高度，包含了非安全区
-- (CGFloat)adaptiveTotalHeight {
-    __block CGFloat total = [self contentNeedsHeight];
-    if (_iSiPhoneX() && _preferredStyle == GYAlertControllerStyleActionSheet) {
-        CGFloat offset = [self adaptiveLayoutInsets].bottom;
-        total += offset;
-    }
-    return total;
-}
-
-/// 内容的宽度，去掉margin和非安全区部分
-- (CGFloat)adaptiveContentWidth {
-    UIEdgeInsets insets = [self adaptiveLayoutInsets];
-    CGFloat fullWidth = _screenWidth();
-    if (_preferredWidth <= 0) { }
-    else if (_preferredWidth <= 1) {
-        fullWidth = fullWidth * _preferredWidth;
-    }
-    else {
-        fullWidth = _preferredWidth;
-    }
-    return fullWidth - 2 * kGYDefaultMargin - insets.left - insets.right;
-}
-/// 内容需要的高度
-- (CGFloat)contentNeedsHeight {
-    __block CGFloat total = 0;
-    if (self.tableView.tableHeaderView) {
-        total += self.tableView.tableHeaderView.bounds.size.height;
-    }
-    [self.interActions enumerateObjectsUsingBlock:^(GYAlertAction * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        CGFloat tmpH = obj.topMargin + obj.height + obj.bottomMargin;
-        total += tmpH;
-    }];
-    return total;
-}
-
-- (UIEdgeInsets)adaptiveLayoutInsets {
-    UIEdgeInsets insets;
-    if (@available(iOS 11.0, *)) {
-        insets = self.view.safeAreaInsets;
     } else {
-        insets = UIEdgeInsetsMake(self.topLayoutGuide.length, 0, 0, self.bottomLayoutGuide.length);
+        total = _screenWidth();
+        if (_preferredWidth <= 0) { }
+        else if (_preferredWidth <= 1) {
+            total = total * _preferredWidth;
+        } else {
+            total = _preferredWidth;
+        }
     }
-    return insets;
+    
+    return total;
 }
+
+/// 根据safeArea修复的宽度
+- (CGFloat)contentViewWidthInContainerView:(UIView *)containerView {
+    CGFloat total = [self contentViewMaxWidth];
+    
+    CGFloat containerViewMaxWidth = containerView.bounds.size.width;
+    // 修复
+    if (NO == _ignoreSafeArea) {
+        UIEdgeInsets insets = UIEdgeInsetsZero;
+        if (@available(iOS 11.0, *)) {
+            insets = containerView.safeAreaInsets;
+        }
+        containerViewMaxWidth -= (insets.left + insets.right);
+    }
+    if (total > containerViewMaxWidth) {
+        total = containerViewMaxWidth;
+    }
+    
+    return total;
+}
+
+/// 内容高度，需要先修复tableView.tableHeaderView高度
+- (CGFloat)contentViewMaxHeight {
+    
+    __block CGFloat total = 0;
+    if (_customView) {
+        total = _preferredCustomViewFrame.size.height;
+        if (total <= 0) {
+            total = _screenHeight();
+        } else if (total <= 1) {
+            total = total * _screenHeight();
+        }
+    } else {
+        if (_preferredHeight <= 0) {
+            
+            if (self.tableView.tableHeaderView) {
+                total += self.tableView.tableHeaderView.bounds.size.height;
+            }
+            
+            [self.interActions enumerateObjectsUsingBlock:^(GYAlertAction * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                CGFloat tmpH = obj.topMargin + obj.height + obj.bottomMargin;
+                total += tmpH;
+            }];
+        } else if (_preferredHeight <= 1) {
+            total = _preferredHeight * _screenHeight();
+        } else {
+            total = _preferredHeight;
+        }
+    }
+    
+    return total;
+}
+
+/// 根据父视图（self.view.super）修复的高度.
+- (CGFloat)contentViewHeightInContainerView:(UIView *)containerView {
+
+    CGFloat total = [self contentViewMaxHeight];
+    
+    // 修复
+    CGFloat containerViewMaxHeight = containerView.bounds.size.height;
+    
+    if (NO == _ignoreSafeArea) {
+        UIEdgeInsets insets = UIEdgeInsetsZero;
+        if (@available(iOS 11.0, *)) {
+            insets = containerView.safeAreaInsets;
+        }
+        containerViewMaxHeight -= (insets.top + insets.bottom);
+    }
+    
+    if (total > containerViewMaxHeight) {
+        total = containerViewMaxHeight;
+    }
+    
+    return total;
+}
+
 /// 更新self.view(transition过程中的presentedView)frame
-- (void)updatePresentedViewFrame {
-    CGFloat sw = _screenWidth();
-    CGFloat sh = _screenHeight();
-    // width
-    CGFloat width = 0;
-    if (_preferredWidth <= 0) {
-        width = sw;
+- (void)updatePresentedViewFrameWithSuperView:(UIView *)containerView {
+    
+    CGFloat superWidth = containerView.bounds.size.width;
+    CGFloat superHeight = containerView.bounds.size.height;
+    
+    UIEdgeInsets insets = UIEdgeInsetsZero;
+    // 需要考虑safeArea
+    if (NO == _ignoreSafeArea) {
+        if (@available(iOS 11.0, *)) {
+            insets = containerView.safeAreaInsets;
+        }
     }
-    else if (_preferredWidth <= 1.0) {
-        width = sw * _preferredWidth;
+    
+    CGFloat width = [self contentViewWidthInContainerView:containerView];
+    if (NO == _customView) {
+        [self updateTableHeaderViewFrameWithMaxWidth:width];
     }
-    else {
-        width = _preferredWidth;
-    }
-    // height
-    CGFloat height = 0;
-    if (_preferredHeight <= 0) {
-        height = [self adaptiveTotalHeight];
-    }
-    else if (_preferredHeight <= 1.0) {
-        height = sh * _preferredHeight;
-    }
-    else {
-        height = _preferredHeight;
-        
-        self.tableView.scrollEnabled = (height < [self contentNeedsHeight]);
-    }
+    CGFloat height = [self contentViewHeightInContainerView:containerView];
+    self.tableView.scrollEnabled = [self contentViewMaxHeight] > height;
     // x
-    CGFloat x = (sw - width) / 2.0;
+    CGFloat x = (superWidth - width) / 2.0;
     
     // y
     CGFloat y = 0;
     if (_preferredStyle == GYAlertControllerStyleAlert) {
-        y = (sh - height) / 2.0;
+        y = (superHeight - height) / 2.0;
     }
     else if (_preferredStyle == GYAlertControllerStyleActionSheet) {
-        y = sh - height;
+        y = superHeight - height - insets.bottom;
     }
     _presentedViewFrame = CGRectMake(x, y, width, height);
-    
+}
+
+/// 更新header.frame
+- (void)updateTableHeaderViewFrameWithMaxWidth:(CGFloat)maxWidth {
+    if (maxWidth <= 0) {
+        maxWidth = _screenWidth();
+    }
+    CGFloat height = [self.headerTitleMessageView heightForWidth:(maxWidth - 2 * kGYDefaultMargin)];
+    self.headerTitleMessageView.frame = CGRectMake(0, 0, maxWidth, height);
 }
 
 #pragma mark - setter、getter
@@ -446,11 +452,29 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
     return _interActions;
 }
 
-- (CGRect)presentedViewFrame {
-    if (CGRectEqualToRect(CGRectNull, _presentedViewFrame)) {
-        [self updatePresentedViewFrame];
+- (UIView *)contentView {
+    if (_customView) { return _customView; }
+    return self.tableView;
+}
+
+- (UITableView *)tableView {
+    if (nil == _tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView.translatesAutoresizingMaskIntoConstraints = NO;
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.scrollEnabled = NO;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.showsVerticalScrollIndicator = NO;
+        _tableView.showsHorizontalScrollIndicator = NO;
+        _tableView.estimatedRowHeight = 0;
+        _tableView.estimatedSectionHeaderHeight = 0;
+        _tableView.estimatedSectionFooterHeight = 0;
+        
+        [_tableView registerClass:GYAlertControllerActionCell.class forCellReuseIdentifier:NSStringFromClass(GYAlertControllerActionCell.class)];
+        
     }
-    return _presentedViewFrame;
+    return _tableView;
 }
 
 #pragma mark - debug

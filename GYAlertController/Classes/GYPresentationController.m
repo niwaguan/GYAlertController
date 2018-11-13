@@ -25,6 +25,7 @@
     [self.presentedViewController.transitionCoordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
         self.maskView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
     } completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+        self.maskView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
     }];
 }
 
@@ -50,6 +51,8 @@
     }
     return [super frameOfPresentedViewInContainerView];
 }
+
+#pragma mark - action
 
 - (void)maskViewDidClick:(UITapGestureRecognizer *)tap {
     if (self.delegate && [self.delegate respondsToSelector:@selector(presentationController:didClickBackgroundView:)])
