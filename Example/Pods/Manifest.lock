@@ -1,16 +1,16 @@
 PODS:
-  - GYAlertController (0.1.2)
+  - GYAlertController (0.1.4)
 
 DEPENDENCIES:
   - GYAlertController (from `../`)
 
 EXTERNAL SOURCES:
   GYAlertController:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  GYAlertController: ede727b075e97e9be14353fa0c5f1391ea4c9b21
+  GYAlertController: edc6931c014329ad566e13a03ea7a324562e1b32
 
 PODFILE CHECKSUM: 71e0ea86d6ed4e0f7ac5c7cd0e94fdcaa06cb015
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

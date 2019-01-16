@@ -25,7 +25,8 @@ CGFloat const kGYNormalFontSize = 14;
 
 
 - (CGFloat)heightForWidth:(CGFloat)width {
-    CGFloat height = 0;
+    CGFloat height = _contentInsets.top + _contentInsets.bottom;
+    width -= (_contentInsets.left + _contentInsets.right);
     CGSize refSize = CGSizeMake(width, CGFLOAT_MAX);
     height += [_titleLabel sizeThatFits:refSize].height;
     height += [_messageLabel sizeThatFits:refSize].height;

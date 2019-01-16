@@ -251,7 +251,7 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
         self.view.layer.masksToBounds = YES;
     }
     
-    if ((_attributedTitle && _attributedTitle.length > 0) || (_message && _message.length > 0)) {
+    if (((_attributedTitle && _attributedTitle.length > 0) || (_message && _message.length > 0)) && _tableView) {
         GYAlertControllerHeaderView *header = [[GYAlertControllerHeaderView alloc] init];
         header.titleLabel.attributedText = _attributedTitle;
         header.messageLabel.attributedText = _message;
@@ -267,6 +267,7 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
     self.modalPresentationStyle = UIModalPresentationCustom;
     _dismissOnBackgroundTapped = YES;
     _presentedViewFrame = CGRectNull;
+    _contentBoxIncludeUnSafeArea = YES;
 }
 
 - (UIView *)tableHeaderFooterViewWithBgColor:(UIColor * _Nullable)color {
@@ -330,8 +331,8 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
     CGFloat total = [self contentViewMaxWidth];
     
     CGFloat containerViewMaxWidth = containerView.bounds.size.width;
-    // 修复
-    if (NO == _ignoreSafeArea) {
+    
+    if (_contentBoxIncludeUnSafeArea == NO) {
         UIEdgeInsets insets = UIEdgeInsetsZero;
         if (@available(iOS 11.0, *)) {
             insets = containerView.safeAreaInsets;
@@ -363,10 +364,7 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
                 total += self.tableView.tableHeaderView.bounds.size.height;
             }
             
-            [self.interActions enumerateObjectsUsingBlock:^(GYAlertAction * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                CGFloat tmpH = obj.topMargin + obj.height + obj.bottomMargin;
-                total += tmpH;
-            }];
+            total += [self actionsHeight];
         } else if (_preferredHeight <= 1) {
             total = _preferredHeight * _screenHeight();
         } else {
@@ -384,13 +382,14 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
     
     // 修复
     CGFloat containerViewMaxHeight = containerView.bounds.size.height;
+    UIEdgeInsets insets = UIEdgeInsetsZero;
+    if (@available(iOS 11.0, *)) {
+        insets = containerView.safeAreaInsets;
+    }
     
-    if (NO == _ignoreSafeArea) {
-        UIEdgeInsets insets = UIEdgeInsetsZero;
-        if (@available(iOS 11.0, *)) {
-            insets = containerView.safeAreaInsets;
-        }
-        containerViewMaxHeight -= (insets.top + insets.bottom);
+    // 内容高度增加，留出底部
+    if (_contentBoxIncludeUnSafeArea && _preferredStyle == GYAlertControllerStyleActionSheet) {
+        total += insets.bottom;
     }
     
     if (total > containerViewMaxHeight) {
@@ -408,7 +407,7 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
     
     UIEdgeInsets insets = UIEdgeInsetsZero;
     // 需要考虑safeArea
-    if (NO == _ignoreSafeArea) {
+    if (_contentBoxIncludeUnSafeArea == NO) {
         if (@available(iOS 11.0, *)) {
             insets = containerView.safeAreaInsets;
         }
@@ -441,6 +440,16 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
     }
     CGFloat height = [self.headerTitleMessageView heightForWidth:(maxWidth - 2 * kGYDefaultMargin)];
     self.headerTitleMessageView.frame = CGRectMake(0, 0, maxWidth, height);
+}
+
+/// 所以action所占高度
+- (CGFloat)actionsHeight {
+    CGFloat __block total = 0;
+    [self.interActions enumerateObjectsUsingBlock:^(GYAlertAction * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        CGFloat tmpH = obj.topMargin + obj.height + obj.bottomMargin;
+        total += tmpH;
+    }];
+    return total;
 }
 
 #pragma mark - setter、getter

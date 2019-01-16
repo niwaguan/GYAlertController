@@ -66,10 +66,10 @@ typedef NS_ENUM(NSInteger, GYAlertControllerStyle) {
 
 /// 整体圆角
 @property (nonatomic, readwrite, assign) CGFloat cornerRadius;
-/// 是否在安全区之外显示；默认NO，只在安全区之内显示
-@property (nonatomic, readwrite, assign) BOOL ignoreSafeArea;
-
-
+/// 整体视图是否包含安全区意外的部分；默认YES。
+@property (nonatomic, readwrite, assign) BOOL contentBoxIncludeUnSafeArea;
+/// TODO: 内容是否在安全区内显示；默认YES。
+//@property (nonatomic, readwrite, assign) BOOL contentInSafeArea;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -218,7 +218,6 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				883F402AE3E74A5E986D9B6D /* [CP] Embed Pods Frameworks */,
-				D0AC8531EFED75DC09D21C3A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -237,8 +236,6 @@
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				ACBA8FBEE5D2AB92EFB40DDF /* [CP] Embed Pods Frameworks */,
-				D2C4D11167F3BFAC948FBBE7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -362,51 +359,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GYAlertController_Example/Pods-GYAlertController_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ACBA8FBEE5D2AB92EFB40DDF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GYAlertController_Tests/Pods-GYAlertController_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D0AC8531EFED75DC09D21C3A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GYAlertController_Example/Pods-GYAlertController_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D2C4D11167F3BFAC948FBBE7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GYAlertController_Tests/Pods-GYAlertController_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

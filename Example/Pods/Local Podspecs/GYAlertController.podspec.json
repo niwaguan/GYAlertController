@@ -1,6 +1,6 @@
 {
   "name": "GYAlertController",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "summary": "A custom UI Component like UIAlertController. But it provides great flexibility and dynamism.",
   "description": "A custom UI Component like UIAlertController. But it provides great flexibility and dynamism. You have more choices to make difference, such as title style, message style, alert title style and so on. Support iPhoneX and iOS 11.",
   "homepage": "https://github.com/Goyaya/GYAlertController",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/Goyaya/GYAlertController.git",
-    "tag": "0.1.2"
+    "tag": "0.1.4"
   },
   "platforms": {
     "ios": "8.0"

@@ -15,11 +15,13 @@ FOUNDATION_EXTERN CGFloat const kGYMinFontSize;
 FOUNDATION_EXTERN CGFloat const kGYNormalFontSize;
 
 @interface GYAlertControllerHeaderView : UIView
-
+/// 内容填充
+@property (nonatomic, readwrite, assign) UIEdgeInsets contentInsets;
 @property (nonatomic, readonly, strong) UILabel *titleLabel;
 @property (nonatomic, readonly, strong) UILabel *messageLabel;
 @property (nonatomic, readonly, strong) CAShapeLayer *bottomLineLayer;
 
+/// 内部会考虑 contentInsets
 - (CGFloat)heightForWidth:(CGFloat)width;
 
 @end

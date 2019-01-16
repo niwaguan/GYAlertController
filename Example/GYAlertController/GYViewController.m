@@ -84,6 +84,7 @@
                                      alertControllerWithTitle:kDefaultTitleAttributedString(@"标题")
                                      message:kDefaultMessageAttributedString(@"一粒尘可填海，一根草斩尽日月星辰，弹指间天翻地覆。群雄并起，万族林立，诸圣争霸，乱天动地；问苍茫大地，谁主沉浮？一个少年从大荒中走出，一切从这里开始。")
                                      preferredStyle:[self styleAtIndexPath:indexPath]];
+    controller.contentBoxIncludeUnSafeArea = NO;
     [self presentViewController:controller animated:YES completion:nil];
 }
 
@@ -108,7 +109,6 @@
                              }];
     cancel.topMargin = 5.0;
     [controller addAction:cancel];
-    
     [self presentViewController:controller animated:YES completion:nil];
 }
 
