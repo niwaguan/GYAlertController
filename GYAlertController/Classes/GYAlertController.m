@@ -440,6 +440,8 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
     }
     CGFloat height = [self.headerTitleMessageView heightForWidth:(maxWidth - 2 * kGYDefaultMargin)];
     self.headerTitleMessageView.frame = CGRectMake(0, 0, maxWidth, height);
+    // MARK: iOS 9.0 时tableView.tableHeaderView需要从新设置
+    self.tableView.tableHeaderView = self.headerTitleMessageView;
 }
 
 /// 所以action所占高度
@@ -469,7 +471,6 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
 - (UITableView *)tableView {
     if (nil == _tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        _tableView.translatesAutoresizingMaskIntoConstraints = NO;
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.scrollEnabled = NO;
