@@ -218,6 +218,8 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
 - (nullable UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(nullable UIViewController *)presenting sourceViewController:(UIViewController *)source {
     GYPresentationController *controller = [[GYPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
     controller.delegate = self;
+    controller.blurEffectForBackground = self.blurEffectForBackground;
+    controller.backgroundFinalColor = self.backgroundFinalColor;
     return controller;
 }
 
@@ -268,6 +270,7 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
     _dismissOnBackgroundTapped = YES;
     _presentedViewFrame = CGRectNull;
     _contentBoxIncludeUnSafeArea = YES;
+    _backgroundFinalColor = [UIColor colorWithWhite:0 alpha:0.5];
 }
 
 - (UIView *)tableHeaderFooterViewWithBgColor:(UIColor * _Nullable)color {

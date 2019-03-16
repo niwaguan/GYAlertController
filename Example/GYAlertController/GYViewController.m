@@ -24,6 +24,10 @@
 {
     [super viewDidLoad];
     
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background"]];
+    imageView.contentMode = UIViewContentModeRedraw;
+    self.tableView.backgroundView = imageView;
+    
     [self buildDataSource];
 }
 
@@ -93,6 +97,7 @@
                                      alertControllerWithTitle:kDefaultTitleAttributedString(@"标题")
                                      message:nil
                                      preferredStyle:[self styleAtIndexPath:indexPath]];
+    controller.blurEffectForBackground = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
     GYAlertAction *ok = [GYAlertAction defaultStyleActionWithTitle:kDefaultAlertAttributedString(@"ok") handler:^(GYAlertAction *action, NSInteger index){
         [self printAction:action atIndex:index];
     }];
@@ -209,6 +214,8 @@
     cell.detailTextLabel.text = acase.message;
     UILabel *styleLabel = (UILabel *)[cell.contentView viewWithTag:100];
     styleLabel.text = acase.styleDescription;
+    cell.backgroundColor = [UIColor clearColor];
+    cell.contentView.backgroundColor = [UIColor clearColor];
     
     return cell;
 }

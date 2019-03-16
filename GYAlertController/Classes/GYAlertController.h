@@ -45,6 +45,15 @@ typedef NS_ENUM(NSInteger, GYAlertControllerStyle) {
 @property (nonatomic, readwrite, assign) CGFloat preferredWidth;
 /// 允许点击背景dismiss, 默认YES
 @property (nonatomic, readwrite, assign) BOOL dismissOnBackgroundTapped;
+/// 背景模糊效果
+@property (nullable, nonatomic, readwrite, strong) UIBlurEffect *blurEffectForBackground;
+/// 背景最终的颜色，默认 [UIColor colorWithWhite:0 alpha:0.5]
+@property(nonatomic, strong) UIColor *backgroundFinalColor;
+/// 整体圆角
+@property (nonatomic, readwrite, assign) CGFloat cornerRadius;
+/// 整体视图是否包含安全区意外的部分；默认YES。
+@property (nonatomic, readwrite, assign) BOOL contentBoxIncludeUnSafeArea;
+
 
 + (instancetype)alertControllerWithTitle:(nullable NSAttributedString *)attributedTitle
                                  message:(nullable NSAttributedString *)message
@@ -64,12 +73,6 @@ typedef NS_ENUM(NSInteger, GYAlertControllerStyle) {
 @property (nonatomic, readonly) NSArray<GYAlertAction *> *actions;
 - (void)addAction:(GYAlertAction *)action;
 
-/// 整体圆角
-@property (nonatomic, readwrite, assign) CGFloat cornerRadius;
-/// 整体视图是否包含安全区意外的部分；默认YES。
-@property (nonatomic, readwrite, assign) BOOL contentBoxIncludeUnSafeArea;
-/// TODO: 内容是否在安全区内显示；默认YES。
-//@property (nonatomic, readwrite, assign) BOOL contentInSafeArea;
 @end
 
 NS_ASSUME_NONNULL_END

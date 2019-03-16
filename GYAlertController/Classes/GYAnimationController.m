@@ -65,7 +65,7 @@ CGFloat const kGYDefaultAnimationDuration = .25;
         CGRect initFrame = [transitionContext initialFrameForViewController:fromVC];
         
         [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
-            fromView.frame = CGRectOffset(initFrame, 0, UIScreen.mainScreen.bounds.size.height - initFrame.size.height);
+            fromView.frame = CGRectOffset(initFrame, 0, initFrame.size.height);
         } completion:^(BOOL finished) {
             BOOL canceled = [transitionContext transitionWasCancelled];
             [transitionContext completeTransition:!canceled];

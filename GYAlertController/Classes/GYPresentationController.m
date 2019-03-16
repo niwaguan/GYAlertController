@@ -10,7 +10,7 @@
 
 @interface GYPresentationController()
 /// maskView
-@property (nonatomic, readwrite, strong) UIView *maskView;
+@property (nonatomic, readwrite, strong) UIView *backgroundView;
 @end
 
 @implementation GYPresentationController
@@ -18,23 +18,33 @@
 
 - (void)presentationTransitionWillBegin {
     
-    [self.containerView insertSubview:self.maskView atIndex:0];
-    self.maskView.frame = self.containerView.bounds;
-    self.maskView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    
-    [self.presentedViewController.transitionCoordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
-        self.maskView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
-    } completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
-        self.maskView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
-    }];
+    if (_blurEffectForBackground && UIAccessibilityIsReduceTransparencyEnabled() == NO) {
+        UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:_blurEffectForBackground];
+        self.containerView.backgroundColor = [UIColor clearColor];
+        [self.containerView addSubview:effectView];
+        [self addTapGesutreForView:effectView];
+        effectView.frame = self.containerView.bounds;
+        effectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    } else {
+        
+        [self.containerView insertSubview:self.backgroundView atIndex:0];
+        self.backgroundView.frame = self.containerView.bounds;
+        self.backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        
+        [self.presentedViewController.transitionCoordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+            self.backgroundView.backgroundColor = self.backgroundFinalColor;
+        } completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+            self.backgroundView.backgroundColor = self.backgroundFinalColor;
+        }];
+    }
 }
 
 - (void)dismissalTransitionWillBegin {
     [self.presentedViewController.transitionCoordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
-        self.maskView.backgroundColor = UIColor.clearColor;
+        self.backgroundView.backgroundColor = UIColor.clearColor;
     } completion:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
-        [self.maskView removeFromSuperview];
-        self.maskView = nil;
+        [self.backgroundView removeFromSuperview];
+        self.backgroundView = nil;
     }];
 }
 
@@ -52,25 +62,28 @@
     return [super frameOfPresentedViewInContainerView];
 }
 
-#pragma mark - action
+#pragma mark -
 
-- (void)maskViewDidClick:(UITapGestureRecognizer *)tap {
+- (void)backgroundViewDidClick:(UITapGestureRecognizer *)tap {
     if (self.delegate && [self.delegate respondsToSelector:@selector(presentationController:didClickBackgroundView:)])
     {
         [self.delegate presentationController:self didClickBackgroundView:tap.view];
     }
 }
 
-#pragma mark - setter,getter
+- (void)addTapGesutreForView:(UIView *)view {
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backgroundViewDidClick:)];
+    [view addGestureRecognizer:tap];
+}
 
-- (UIView *)maskView {
-    if (nil == _maskView) {
-        _maskView = [[UIView alloc] init];
-        _maskView.backgroundColor = UIColor.clearColor;
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(maskViewDidClick:)];
-        [_maskView addGestureRecognizer:tap];
+- (UIView *)backgroundView {
+    if (nil == _backgroundView) {
+        _backgroundView = [[UIView alloc] init];
+        _backgroundView.backgroundColor = UIColor.clearColor;
+        [self addTapGesutreForView:_backgroundView];
     }
-    return _maskView;
+    return _backgroundView;
 }
 
 @end
