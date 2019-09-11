@@ -63,6 +63,9 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
 /// 框架添加的对于外部视图的约束
 @property (nonatomic, readwrite, strong) NSArray<NSLayoutConstraint *> *customViewConstraints;
 
+/// 视图整体遮罩
+@property (nonatomic, readwrite, strong) CAShapeLayer *maskLayer;
+
 @end
 
 @implementation GYAlertController
@@ -248,9 +251,9 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
 
 - (void)setupUI {
     
-    if (_cornerRadius) {
-        self.view.layer.cornerRadius = _cornerRadius;
-        self.view.layer.masksToBounds = YES;
+    if (_cornerRadius > 0) {
+        self.view.layer.mask = self.maskLayer;
+        [self updateViewMask];
     }
     
     if (((_attributedTitle && _attributedTitle.length > 0) || (_message && _message.length > 0)) && _tableView) {
@@ -303,6 +306,15 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
         action.configuration(cell);
     }
 }
+
+- (void)updateViewMask {
+    if (CGRectIsNull(_presentedViewFrame)) {
+        return;
+    }
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, _presentedViewFrame.size.width, _presentedViewFrame.size.height) byRoundingCorners:_rectCorner cornerRadii:CGSizeMake(_cornerRadius, _cornerRadius)];
+    self.maskLayer.path = path.CGPath;
+}
+
 
 #pragma mark - layout
 
@@ -433,7 +445,7 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
     else if (_preferredStyle == GYAlertControllerStyleActionSheet) {
         y = superHeight - height - insets.bottom;
     }
-    _presentedViewFrame = CGRectMake(x, y, width, height);
+    self.presentedViewFrame = CGRectMake(x, y, width, height);
 }
 
 /// 更新header.frame
@@ -488,6 +500,34 @@ NSAttributedString* kDefaultAlertAttributedString(NSString *text) {
         
     }
     return _tableView;
+}
+
+- (void)setCornerRadius:(CGFloat)cornerRadius {
+    if (_cornerRadius != cornerRadius) {
+        _cornerRadius = cornerRadius;
+        if ([self isViewLoaded]) {
+            [self updateViewMask];
+        }
+    }
+}
+
+- (CAShapeLayer *)maskLayer {
+    if (!_maskLayer) {
+        _maskLayer = [CAShapeLayer layer];
+        _maskLayer.fillColor = [UIColor blueColor].CGColor;
+        _maskLayer.strokeColor = [UIColor clearColor].CGColor;
+        _maskLayer.lineWidth = 1;
+    }
+    return _maskLayer;
+}
+
+- (void)setPresentedViewFrame:(CGRect)presentedViewFrame {
+    if (!CGRectEqualToRect(_presentedViewFrame, presentedViewFrame)) {
+        _presentedViewFrame = presentedViewFrame;
+        if (_cornerRadius > 0) {
+            [self updateViewMask];
+        }
+    }
 }
 
 #pragma mark - debug

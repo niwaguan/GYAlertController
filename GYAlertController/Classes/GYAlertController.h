@@ -51,6 +51,8 @@ typedef NS_ENUM(NSInteger, GYAlertControllerStyle) {
 @property(nonatomic, strong) UIColor *backgroundFinalColor;
 /// 整体圆角
 @property (nonatomic, readwrite, assign) CGFloat cornerRadius;
+/// rectCorner
+@property (nonatomic, readwrite, assign) UIRectCorner rectCorner;
 /// 整体视图是否包含安全区意外的部分；默认YES。
 @property (nonatomic, readwrite, assign) BOOL contentBoxIncludeUnSafeArea;
 

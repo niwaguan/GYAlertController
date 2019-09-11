@@ -56,6 +56,8 @@
                                      alertControllerWithTitle:nil
                                      message:kDefaultMessageAttributedString(@"一粒尘可填海，一根草斩尽日月星辰，弹指间天翻地覆。群雄并起，万族林立，诸圣争霸，乱天动地；问苍茫大地，谁主沉浮？一个少年从大荒中走出，一切从这里开始。")
                                      preferredStyle:[self styleAtIndexPath:indexPath]];
+    controller.cornerRadius = 10;
+    controller.rectCorner = UIRectCornerTopLeft | UIRectCornerTopRight;
     [self presentViewController:controller animated:YES completion:nil];
 }
 - (void)case3AtIndexPath:(NSIndexPath *)indexPath {
@@ -259,7 +261,7 @@
     NSArray<NSString *> *cases = @[
                                    @"01什么都没有😆",
                                    @"02只有标题",
-                                   @"03只有消息",
+                                   @"03只有消息，RoundCorner",
                                    @"04只有actions",
                                    @"05标题和消息",
                                    @"06标题和actions",
